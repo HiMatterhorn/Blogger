@@ -1,12 +1,13 @@
-﻿using Domain.Entities;
+﻿using Application.DTO;
+using Domain.Entities;
 using System.Collections.Generic;
 
 namespace Application.Interfaces
 {
     public interface IPostService
     {
-        IEnumerable<Post> GetAllPosts();
-        Post GetPostById(int id);
+        IEnumerable<PostDto> GetAllPosts();
+        PostDto GetPostById(int id);
 
     }
 }
