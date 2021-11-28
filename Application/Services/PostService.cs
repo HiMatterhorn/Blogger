@@ -14,6 +14,7 @@ namespace Application.Services
         public PostService(IPostRepository postRepository, IMapper mapper)
         {
             _postRepository = postRepository;
+            _mapper = mapper;
         }
 
         public IEnumerable<PostDto> GetAllPosts()
