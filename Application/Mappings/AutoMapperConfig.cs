@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Mappings
 {
-    public static class AutoMapperCongif
+    public static class AutoMapperConfig
     {
 
         public static IMapper Initialize() => new MapperConfiguration(cfg =>
