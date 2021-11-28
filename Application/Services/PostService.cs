@@ -3,7 +3,6 @@ using Application.Interfaces;
 using AutoMapper;
 using Domain.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Application.Services
 {
@@ -20,23 +19,13 @@ namespace Application.Services
         public IEnumerable<PostDto> GetAllPosts()
         {
             var posts = _postRepository.GetAll();
-            return posts.Select(post => new PostDto
-            {
-                Id = post.Id,
-                Title = post.Title,
-                Content = post.Content
-            });
+            return _mapper.Map<IEnumerable<PostDto>>(posts);
         }
 
         public PostDto GetPostById(int id)
-            {
-                var post = _postRepository.GetById(id);
-                return new PostDto()
-                {
-                    Id = post.Id,
-                    Title = post.Title,
-                    Content = post.Content
-                };
-            }
+        {
+            var post = _postRepository.GetById(id);
+            return _mapper.Map<PostDto>(post);
         }
     }
+}
