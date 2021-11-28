@@ -19,5 +19,21 @@ namespace WebAPI.Controllers
             var posts = _postService.GetAllPosts();
             return Ok(posts);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var post = _postService.GetPostById(id);
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(post);
+            }
+
+        }
     }
 }
