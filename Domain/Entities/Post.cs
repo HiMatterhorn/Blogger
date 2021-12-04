@@ -25,5 +25,7 @@ namespace Domain.Entities
         {
             (Id, Title, Content) = (id, title, content);
         }
+
+        //cmd
     }
 }
