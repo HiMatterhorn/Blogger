@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain.Entities
 {
     [Table("Posts")]
-    public class Post : AuditableNetity
+    public class Post : AuditableEntity
     {
 
         [Key]
