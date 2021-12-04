@@ -2,6 +2,7 @@
 using Application.Mappings;
 using Application.Services;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Application
 {
@@ -10,9 +11,9 @@ namespace Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IPostService, PostService>();
-            services.AddSingleton(AutoMapperConfig.Initialize());
+
             return services;
         }
     }
