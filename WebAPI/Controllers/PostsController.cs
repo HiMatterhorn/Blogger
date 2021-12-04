@@ -59,5 +59,12 @@ namespace WebAPI.Controllers
 
 
         }
+        [SwaggerOperation(Summary = "Delete a soecific post")]
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _postService.DeletePost(id);
+            return NoContent();
+        }
     }
 }
