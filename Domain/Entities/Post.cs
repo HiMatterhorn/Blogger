@@ -1,18 +1,20 @@
 ﻿using Domain.Entities.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
+    [Table("Posts")]
     public class Post : AuditableNetity
     {
 
-
+        [Key]
         public int Id { get; set; }
+        [Required]
+        [MaxLength(100)]
         public string Title { get; set; }
+        [Required]
+        [MaxLength(2000)]
         public string Content { get; set; }
 
         public Post()
